@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="個人用Windows SVNバックアップツール。resticとrcloneを使ったGoogle Driveへの保存・復元の用途を説明します。">
+<title>アプリについて｜せとSVNバックアップ</title>
+<style> :root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI","Yu Gothic",sans-serif;color:#282238;background:#f6f3fb}*{box-sizing:border-box}body{margin:0;line-height:1.85}main{max-width:860px;margin:auto;padding:48px 24px}nav{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px}a{color:#65419a;text-underline-offset:4px}a:focus-visible{outline:3px solid #65419a;outline-offset:5px}h1{font-size:clamp(29px,6vw,46px);line-height:1.35;margin:12px 0 24px;overflow-wrap:anywhere}h2{font-size:21px;margin:0 0 12px}h3{font-size:17px;margin:20px 0 6px}section{background:white;border:1px solid #e6deef;border-radius:20px;padding:24px 28px;margin:20px 0}.eyebrow{color:#745594;letter-spacing:.12em;font-size:13px}.lead{font-size:18px}.muted,footer{color:#62596f;font-size:14px}.notice{border-left:4px solid #8460b0;background:#eee7f7;padding:14px 18px;border-radius:0 10px 10px 0}.tag{display:inline-block;background:#eee7f7;border-radius:20px;padding:3px 12px;font-size:13px;color:#65419a}code{font-family:ui-monospace,monospace;font-size:.9em;overflow-wrap:anywhere}ul,ol{padding-left:1.5em}li+li{margin-top:8px}p{margin:10px 0}footer{margin-top:36px;border-top:1px solid #e6deef;padding-top:20px}.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.flow div{border-top:2px solid #cdb9e4;padding:12px 4px}.flow b{display:block}.flow span{font-size:14px;color:#62596f}@media(max-width:560px){main{padding:28px 18px}section{padding:22px 20px}nav{gap:18px;margin-bottom:28px}.flow{grid-template-columns:1fr;gap:4px}.lead{font-size:17px}}</style>
+</head>
+<body><main>
+<nav aria-label="メインナビゲーション"><a href="svn-backup.html" aria-current="page">アプリについて</a><a href="svn-backup-privacy.html">プライバシーポリシー</a></nav>
+<header><p class="eyebrow">PERSONAL BACKUP / WINDOWS</p><h1>せとSVNバックアップ</h1><p class="lead">手元のSVNリポジトリを、暗号化して<br>自分のGoogle Driveへ。</p><p class="tag">個人専用・設定準備中</p></header>
+<p class="notice">現在は設定・動作確認を進めている段階です。このページは予定している用途とデータの取り扱いを説明するもので、定期実行や復元の動作確認が完了したことを示すものではありません。</p>
+<section><h2>このアプリについて</h2><p>「せとSVNバックアップ」は、所有者本人が自分のWindows PC上のSVNリポジトリをバックアップ・復元するための個人用ツールです。不特定多数へのサービス提供や、他の利用者のデータの収集を目的としません。</p><div class="flow" aria-label="バックアップの処理順"><div><b>01 · コピー</b><span>SVNのhotcopyでローカルにバックアップ用コピーを作成</span></div><div><b>02 · 暗号化</b><span>resticで暗号化・重複排除してバックアップを作成</span></div><div><b>03 · 保存・復元</b><span>rclone経由で本人のGoogle Driveへ保存し、必要時に復元</span></div></div></section>
+<section><h2>Google Driveを使う理由</h2><p>PCの外に暗号化済みのバックアップを保存し、必要なときに読み出すためです。バックアップの作成・一覧確認・読み出し・整理に必要な範囲で、対象ファイルの作成、閲覧、更新、削除を行います。</p><h3>使用する権限</h3><p><code>https://www.googleapis.com/auth/drive.file</code></p><p>本アプリが作成したファイル、または利用者が本アプリでの使用を許可したファイルに限定した権限を使用する設計です。Drive全体を自由に閲覧する権限ではありません。GmailやGoogleカレンダーの権限は要求しません。</p><p class="muted">既存ファイルへのアクセスや復元も、この権限でアクセスできる範囲に限られます。別の認証設定に変更した場合などは、事前の確認が必要です。</p></section>
+<section><h2>データの取り扱い</h2><p>元のSVNデータとhotcopyはローカルに置き、Google Driveにはresticの暗号化済みバックアップとリポジトリ管理用ファイルを保存します。OAuth認証情報はローカルのrclone設定で管理します。</p><p>保存場所、認証情報の保護、権限の取り消しと削除については、<a href="svn-backup-privacy.html">プライバシーポリシー</a>をご確認ください。</p></section>
+<section><h2>お問い合わせ</h2><p>GoogleのOAuth同意画面に表示される「ユーザーサポートメール」宛にご連絡ください。このサイト上ではお問い合わせフォームや個人情報の入力欄を設けていません。</p></section>
+<footer>せとSVNバックアップ · 個人利用のバックアップツール<br>このサイトは説明用です。バックアップデータや認証情報は公開しません。</footer>
+</main></body>
+</html>
